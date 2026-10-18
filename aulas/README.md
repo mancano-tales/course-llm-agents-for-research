@@ -8,7 +8,7 @@ Na raiz do repositório, execute:
 pwsh -File tools/render-slides.ps1
 ```
 
-Requer PowerShell 7, Quarto e LaTeX com XeLaTeX (por exemplo, TinyTeX). As fontes usadas são Arial e Consolas. O script compila o PDF com Beamer. A saída é `docs/aulas/slides.pdf`.
+Requer PowerShell 7, Quarto e LaTeX com XeLaTeX (por exemplo, TinyTeX). As fontes usadas são Arial e Consolas. O script compila o PDF com Beamer. A saída é copiada para `assets/agentes-ia-pesquisa.pdf`, publicada no site.
 
 O modo `handout` consolida os incrementos no PDF, mantendo uma página por frame. O PDF não depende de impressão do navegador.
 

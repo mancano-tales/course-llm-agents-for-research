@@ -1,7 +1,44 @@
-﻿project:
-  type: default
-  output-dir: docs
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - 2026-workshop-agentes-dcp-usp-ementa.qmd
+    - aulas/index.qmd
+    - aulas/01-introducao-ecossistema/slides.qmd
+    - aulas/02-habilidades-praticas/slides.qmd
+    - materiais.qmd
+    - sobre.qmd
+  resources:
+    - assets/
+    - referencias.bib
+
+lang: pt
+
+website:
+  title: "Agentes de IA para Pesquisa"
+  site-url: https://mancano-tales.github.io/agentic-research-workshop/
+  repo-url: https://github.com/mancano-tales/agentic-research-workshop
+  page-navigation: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Início
+      - href: 2026-workshop-agentes-dcp-usp-ementa.qmd
+        text: Ementa
+      - href: aulas/index.qmd
+        text: Aulas
+      - href: materiais.qmd
+        text: Materiais
+      - href: sobre.qmd
+        text: Sobre
+    right:
+      - icon: github
+        href: https://github.com/mancano-tales/agentic-research-workshop
+  page-footer:
+    center: "Seminário Discente DCP-USP 2026 · Conteúdo sob CC BY 4.0"
 
 format:
-  typst: default
-  docx: default
+  html:
+    theme: cosmo
+    toc: true

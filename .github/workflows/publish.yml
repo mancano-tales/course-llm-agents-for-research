@@ -1,0 +1,31 @@
+name: Publicar site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Renderizar site e ementa (PDF/DOCX)
+        run: |
+          quarto render
+          quarto render 2026-workshop-agentes-dcp-usp-ementa.qmd --to typst
+          quarto render 2026-workshop-agentes-dcp-usp-ementa.qmd --to docx
+      - uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+          render: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -12,6 +12,8 @@ author:
   - name: "Tales Mançano"
     affiliation: "Mestrando no DCP-USP"
 format:
+  html:
+    toc: true
   typst:
     papersize: a4
     margin:

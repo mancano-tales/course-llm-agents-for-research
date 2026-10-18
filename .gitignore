@@ -2,8 +2,6 @@
 .quarto/
 _site/
 *.html
-!docs/*.html
-!docs/**/*.html
 .Rproj.user
 .Rhistory
 .RData
@@ -26,4 +24,4 @@ desktop.ini
 .specstory/
 
 # Materiais confidenciais recebidos por e-mail (uso local)
-/materiais-locais/manoel-galdino/
+/materiais-locais/

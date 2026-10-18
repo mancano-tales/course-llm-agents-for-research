@@ -13,8 +13,10 @@ try {
     & quarto render $relativeSource --to beamer
     if ($LASTEXITCODE -ne 0) { throw 'Falha na renderização: beamer' }
     $outputRelative = Join-Path ([IO.Path]::GetDirectoryName($relativeSource)) ([IO.Path]::GetFileNameWithoutExtension($relativeSource))
-    $outputStem = Join-Path $repoRoot (Join-Path 'docs' $outputRelative)
-    Write-Output "PDF (Beamer Madrid): $outputStem.pdf"
+    $built = Join-Path $repoRoot (Join-Path '_site' "$outputRelative.pdf")
+    $target = Join-Path $repoRoot 'assets/agentes-ia-pesquisa.pdf'
+    Copy-Item -LiteralPath $built -Destination $target -Force
+    Write-Output "PDF (Beamer Madrid): assets/agentes-ia-pesquisa.pdf (versionar apos conferir)"
 } finally {
     Pop-Location
 }

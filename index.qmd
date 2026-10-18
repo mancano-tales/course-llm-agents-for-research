@@ -1,0 +1,22 @@
+---
+title: "Agentes de IA para Pesquisa"
+subtitle: "Inteligência artificial e autonomia na pesquisa social"
+toc: false
+---
+
+Minicurso do **Seminário Discente DCP-USP 2026**, em duas sessões de 1h30. O curso apresenta agentes de IA (modelos que executam comandos, leem arquivos e testam o próprio trabalho) e as práticas para usá-los com rigor: permissões, registro do que foi feito, revisão independente e *code as policy*.
+
+## Sessões
+
+| Sessão | Tema | Slides |
+|---|---|---|
+| 1 | Do chatbot ao agente: o que muda quando o modelo pode agir | [abrir](aulas/01-introducao-ecossistema/slides.qmd) |
+| 2 | Habilidades práticas e governança: skills, hooks, MCP, `AGENTS.md` | [abrir](aulas/02-habilidades-praticas/slides.qmd) |
+
+Versão para impressão das duas sessões: [PDF](assets/agentes-ia-pesquisa.pdf).
+
+## Comece por aqui
+
+- [Ementa](2026-workshop-agentes-dcp-usp-ementa.qmd): objetivos, programa e bibliografia básica ([PDF](2026-workshop-agentes-dcp-usp-ementa.pdf), [DOCX](2026-workshop-agentes-dcp-usp-ementa.docx)).
+- [Materiais](materiais.qmd): bibliografia comentada e projeto de demonstração.
+- [Sobre](sobre.qmd): ministrantes, licença e como citar.

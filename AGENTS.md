@@ -66,8 +66,9 @@ Repositório do minicurso "Workshop Agentes: Inteligência Artificial e Autonomi
 3. Tales Mançano (Mestrando, DCP-USP)
 
 ## Diretrizes de Operação para Agentes de IA
-* **Organização da governança**: Planos, pesquisas e registros de revisão ficam em `docs/plan/`, `docs/pesquisa/` e `docs/llm-reviews/`. A pasta `docs/` também recebe as saídas do Quarto. O histórico congelado fica em `docs/deprecated/`; não mova nem altere seu conteúdo.
+* **Organização da governança**: Planos, pesquisas e registros de revisão ficam em `docs/plan/`, `docs/pesquisa/` e `docs/llm-reviews/`. A pasta `docs/` não é renderizada nem publicada no site. O histórico congelado fica em `docs/deprecated/`; não mova nem altere seu conteúdo.
 * **Migração do histórico**: O autor autorizou em 2026-10-14 a transferência de `0-meta/deprecated/` para `docs/deprecated/`, sem alteração de conteúdo. Essa autorização é uma exceção pontual à proibição de mover o histórico no bloco de governança comum; após a migração, a pasta permanece congelada.
 * **Comunicação Direta**: Manter tom conciso, profissional e acadêmico. Evitar uso de emojis.
 * **Governança**: Decisões e entregas relevantes do curso ficam registradas em issues, PRs e commits (o `NEWS.md` foi aposentado; ver o bloco de governança comum acima).
-* **Renderização**: A ementa e os slides utilizam Quarto. Não edite arquivos PDF/HTML compilados diretamente em `docs/`; edite os fontes `.qmd` e execute a compilação.
+* **Site e renderização**: O projeto Quarto é um site (`_quarto.yml`), gerado em `_site/` (não versionado) e publicado no GitHub Pages pelo workflow `publish.yml` a cada push na `main`. Edite os fontes `.qmd`; não versione HTML/PDF compilados, exceto o PDF Beamer em `assets/`, gerado localmente por `tools/render-slides.ps1`.
+* **Material privado**: Material de colegas recebido em confiança fica em `materiais-locais/`, ignorada pelo Git e clone do repositório privado `mancano-tales/agentic-research-workshop-private`. Nunca copie, cite ou adapte esse conteúdo no repositório público ou no site sem permissão do autor original.
