@@ -24,3 +24,6 @@ desktop.ini
 
 # Historicos locais do SpecStory (conversas com IA)
 .specstory/
+
+# Materiais confidenciais recebidos por e-mail (uso local)
+/materiais-locais/manoel-galdino/

@@ -23,7 +23,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[1]
 # A pasta de planos varia entre os repos do ecossistema; a primeira que existir vale.
 # Para forçar outra: variável de ambiente PLANO_ISSUE_PASTA (relativa à raiz do repo).
-_CANDIDATAS = ["repo-governance/plan", "9-vers/plan", "0-governance/plan", "0-meta/plan", "plan"]
+_CANDIDATAS = ["docs/plan", "repo-governance/plan", "9-vers/plan", "0-governance/plan", "0-meta/plan", "plan"]
 
 
 def _pasta_de_planos() -> Path:

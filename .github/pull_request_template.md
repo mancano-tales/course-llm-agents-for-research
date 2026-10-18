@@ -4,7 +4,7 @@
 
 ## Plano e issue
 
-- Plano: `repo-governance/plan/...` (ou "sem plano: mudança pequena")
+- Plano: `docs/plan/...` (ou "sem plano: mudança pequena")
 - Refs #
 
 ## Agente

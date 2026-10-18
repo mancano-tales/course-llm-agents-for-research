@@ -1,3 +1,6 @@
 # Saída gerada pelo Quarto: versionada como está, sem conversão de fim de linha.
 # Evita que o core.autocrlf acuse alterações falsas a cada renderização.
 docs/** -text
+
+# Documentação de governança: mantém a normalização de arquivos de texto.
+docs/**/*.md text=auto

@@ -66,6 +66,8 @@ Repositório do minicurso "Workshop Agentes: Inteligência Artificial e Autonomi
 3. Tales Mançano (Mestrando, DCP-USP)
 
 ## Diretrizes de Operação para Agentes de IA
+* **Organização da governança**: Planos, pesquisas e registros de revisão ficam em `docs/plan/`, `docs/pesquisa/` e `docs/llm-reviews/`. A pasta `docs/` também recebe as saídas do Quarto. O histórico congelado fica em `docs/deprecated/`; não mova nem altere seu conteúdo.
+* **Migração do histórico**: O autor autorizou em 2026-10-14 a transferência de `0-meta/deprecated/` para `docs/deprecated/`, sem alteração de conteúdo. Essa autorização é uma exceção pontual à proibição de mover o histórico no bloco de governança comum; após a migração, a pasta permanece congelada.
 * **Comunicação Direta**: Manter tom conciso, profissional e acadêmico. Evitar uso de emojis.
 * **Governança**: Decisões e entregas relevantes do curso ficam registradas em issues, PRs e commits (o `NEWS.md` foi aposentado; ver o bloco de governança comum acima).
 * **Renderização**: A ementa e os slides utilizam Quarto. Não edite arquivos PDF/HTML compilados diretamente em `docs/`; edite os fontes `.qmd` e execute a compilação.
