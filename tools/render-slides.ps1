@@ -1,0 +1,20 @@
+param([string]$Source = 'aulas/slides.qmd')
+
+$ErrorActionPreference = 'Stop'
+$repoRoot = Split-Path $PSScriptRoot -Parent
+Push-Location $repoRoot
+try {
+    if (-not (Test-Path -LiteralPath $Source)) { throw "Fonte inexistente: $Source" }
+    $sourcePath = (Resolve-Path -LiteralPath $Source).Path
+    $relativeSource = [IO.Path]::GetRelativePath($repoRoot, $sourcePath)
+    if ($relativeSource.StartsWith('..') -or [IO.Path]::IsPathRooted($relativeSource)) {
+        throw 'A fonte deve estar dentro do repositório.'
+    }
+    & quarto render $relativeSource --to beamer
+    if ($LASTEXITCODE -ne 0) { throw 'Falha na renderização: beamer' }
+    $outputRelative = Join-Path ([IO.Path]::GetDirectoryName($relativeSource)) ([IO.Path]::GetFileNameWithoutExtension($relativeSource))
+    $outputStem = Join-Path $repoRoot (Join-Path 'docs' $outputRelative)
+    Write-Output "PDF (Beamer Madrid): $outputStem.pdf"
+} finally {
+    Pop-Location
+}

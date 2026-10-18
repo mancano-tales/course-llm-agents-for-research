@@ -193,7 +193,7 @@ Nomes e preços mudam em semanas. Conferir na véspera.
 :::
 
 ::: notes
-Fontes oficiais e datas: 0-meta/pesquisa/2026-10-05_code-as-policy-modelos-harness.md, bloco 2. Ponto de ênfase: pesos abertos e versionados podem ser rodados de novo daqui a cinco anos; modelos fechados são descontinuados pelo fornecedor (Spirling 2023; Barrie, Palmer e Spirling 2025).
+Fontes oficiais e datas: docs/pesquisa/2026-10-05_code-as-policy-modelos-harness.md, bloco 2. Ponto de ênfase: pesos abertos e versionados podem ser rodados de novo daqui a cinco anos; modelos fechados são descontinuados pelo fornecedor (Spirling 2023; Barrie, Palmer e Spirling 2025).
 :::
 
 ## Aberto, fechado e replicação
@@ -275,7 +275,7 @@ O custo dominante é o tempo de validação humana, não a API.
 :::
 
 ::: notes
-Cálculo e premissas: 0-meta/pesquisa/2026-10-05_code-as-policy-modelos-harness.md, seção 2.6. Converter para reais na semana da aula e comparar com uma bolsa de mestrado. Modelos com raciocínio ligado podem multiplicar os tokens de saída.
+Cálculo e premissas: docs/pesquisa/2026-10-05_code-as-policy-modelos-harness.md, seção 2.6. Converter para reais na semana da aula e comparar com uma bolsa de mestrado. Modelos com raciocínio ligado podem multiplicar os tokens de saída.
 :::
 
 # 4. O *harness*: isolamento

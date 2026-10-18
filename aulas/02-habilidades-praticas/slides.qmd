@@ -10,6 +10,14 @@ lang: pt
 format:
   revealjs:
     theme: [default, ../_tema/slides.scss]
+    css: slides.css
+    width: 1280
+    height: 720
+    margin: 0.08
+    center: false
+    embed-resources: true
+    pdf-separate-fragments: false
+    show-notes: false
     slide-number: true
     preview-links: auto
     hash-type: number
@@ -59,7 +67,41 @@ projeto-demo/
 
 Você não precisa instalar nada hoje. Assista, pergunte e sugira pedidos ao agente.
 
+## O percurso de hoje {.smaller}
+
+**90 minutos, com demonstrações dos ministrantes.**
+
+| Etapa | Tempo | O que vamos observar |
+|---|---:|---|
+| Retomada e projeto | 5 min | O problema de pesquisa e os arquivos |
+| Skills e auditoria | 15 min | Protocolo reutilizável e revisão independente |
+| Hooks e validação | 20 min | Uma regra que detecta erros e bloqueia ações |
+| MCP e segurança | 15 min | Acesso a ferramentas e limites de permissão |
+| `AGENTS.md` e registro | 15 min | Contexto persistente e rastreabilidade |
+| Aplicações na pesquisa | 15 min | Critérios para escolher um fluxo útil |
+| Encerramento | 5 min | Como adaptar à sua pesquisa |
+
+::: notes
+Os tempos incluem as demonstrações e perguntas. Os exemplos novos detalham o caso já previsto na ementa. Não acrescentar um bloco sobre operação empresarial ou repetir o panorama da Sessão 1.
+:::
+
 # 1. *Skills* e auditoria
+
+## Um pedido que podemos verificar {.smaller}
+
+**Pedido inicial:** “Codifique os discursos.”
+
+| Pergunta | Neste projeto |
+|---|---|
+| Qual resultado? | Uma classificação da posição sobre gasto em educação |
+| Quais entradas? | Discursos fictícios e `codebook.md` |
+| Qual entrega? | CSV com código, evidência literal e identificação do modelo |
+| Quais limites? | Preservar os dados brutos e as categorias do livro de códigos |
+| Quando termina? | Validador sem erros e ambiguidades registradas |
+
+::: notes
+Mostrar que o pedido curto funciona na demo porque o projeto já contém o contexto. Fora dele, é preciso fornecer as entradas, os limites e a definição de pronto. Validador sem erros é condição necessária; a interpretação ainda passa por auditoria e validação humana.
+:::
 
 ## O que é uma *skill* {.smaller}
 
@@ -74,6 +116,28 @@ Você não precisa instalar nada hoje. Assista, pergunte e sugira pedidos ao age
 :::
 
 A *skill* é prosa: orienta. As regras que não podem falhar ficam nos *hooks*.
+
+## A anatomia da nossa *skill* {.smaller}
+
+```yaml
+---
+name: codificar-discursos
+description: Codifica discursos segundo codebook.md.
+---
+```
+
+**O corpo explica o protocolo:**
+
+1. ler o livro de códigos e os discursos;
+2. atribuir uma categoria e copiar a evidência literal;
+3. salvar o CSV no formato previsto e corrigir erros de validação;
+4. separar uma amostra para codificação humana às cegas.
+
+**A descrição diz quando usar. O protocolo diz como trabalhar.**
+
+::: notes
+Trecho de metadados abreviado para projeção; abrir a skill real da demo para mostrar a descrição completa. Uma skill reutiliza decisões metodológicas do pesquisador. Não dá autoridade ao agente para inventar categorias.
+:::
 
 ## Demo 1a — o agente usando a *skill* {.smaller}
 
@@ -114,6 +178,41 @@ O agente que fez o trabalho, ao revisá-lo:
 
 ::: notes
 D005 e D006 são os casos limítrofes naturais do livro de códigos. Para ir além: template de Pedro Sant'Anna (portões de qualidade, QA adversarial com teto de rodadas); /council de Chris Blattman (críticos em paralelo).
+:::
+
+## O auditor recebe um protocolo {.smaller}
+
+| Etapa | O que o auditor faz |
+|---|---|
+| Leitura independente | Lê o livro de códigos e os discursos antes de ver a classificação |
+| Julgamento inicial | Fixa seus próprios códigos e as regras que os sustentam |
+| Comparação | Abre o CSV do produtor e identifica divergências |
+| Parecer | Explica ambiguidades e recomenda revisão ou validação humana |
+
+**Só leitura:** o auditor aponta o problema. A correção fica com quem produz.
+
+::: {.alerta}
+Uma citação literal pode existir e ainda sustentar uma interpretação errada.
+:::
+
+::: notes
+Essa é a separação entre verificação mecânica e julgamento metodológico. Evitar uma nota genérica de qualidade: o parecer deve apontar o discurso, a categoria e a regra do livro de códigos. O arquivo auditor.md da demo já implementa esta sequência.
+:::
+
+## Contexto suficiente para cada etapa {.smaller}
+
+**Quem codifica precisa:** dos discursos, do livro de códigos e do formato de saída.
+
+**Quem audita precisa:** das mesmas fontes e de um protocolo de comparação, com leitura independente primeiro.
+
+**Quem retoma o projeto precisa:** dos arquivos produzidos, das decisões e das pendências.
+
+::: {.tese}
+Salve no projeto o que outra sessão precisará para continuar.
+:::
+
+::: notes
+O contexto de um agente depende do harness e de como ele foi iniciado. Para a independência da demo, conferir as permissões e o protocolo reais, em vez de presumir que todo subagente sempre começa sem histórico.
 :::
 
 # 2. *Hooks* e *code as policy*
@@ -265,13 +364,13 @@ Um PDF "de referência" traz, em letra branca:
 
 . . .
 
-- O modelo lê o texto escondido como se fosse instrução
-- **O que protege**: uma regra que bloqueie a ação perigosa (*hook* ou permissão) — ela não lê PDFs nem se convence — e uma cópia da qual restaurar
-- **O que não protege**: pedir ao modelo que "tome cuidado"
-- **E se não houver regra para aquela ação?** O agente obedece ao PDF. Regras só protegem o que cobrem
+- O texto extraído pode induzir o modelo a tratar o documento como uma instrução
+- **Proteção**: uma permissão ou regra que bloqueie a ação perigosa, com uma cópia recuperável dos arquivos
+- Pedir cuidado ao modelo acrescenta uma orientação, mas não impõe uma barreira de acesso
+- O bloqueio depende das ações cobertas pela regra. O resultado de uma tentativa de injeção pode variar
 
 ::: notes
-Demonstração a preparar e ensaiar (decisão 4 do plano de preparação, 0-meta/plan/2026-10-06_plano-preparacao-aulas.md). Usar uma pasta descartável; nunca dados reais. O projeto de demonstração atual NÃO bloqueia apagar dados/processados/ (o hook de validação só acusa depois). A pasta da demo precisa de um hook PreToolUse que bloqueie rm em resultados — ou, alternativa honesta, mostrar primeiro a falha (sem regra, o agente apaga) e depois a mesma tentativa com a regra ligada.
+Demonstração a preparar e ensaiar (decisão 4 do plano de preparação, docs/plan/2026-10-06_plano-preparacao-aulas.md). Usar uma pasta descartável; nunca dados reais. O projeto de demonstração atual NÃO bloqueia apagar dados/processados/ (o hook de validação só acusa depois). A pasta da demo precisa de um hook PreToolUse que bloqueie rm em resultados — ou, alternativa honesta, mostrar primeiro a falha (sem regra, o agente apaga) e depois a mesma tentativa com a regra ligada.
 :::
 
 # 4. `AGENTS.md`, Git e reprodutibilidade
@@ -297,15 +396,18 @@ cat logs/registro-agente.jsonl
 ```
 
 ```json
-{"momento":"2026-…","ferramenta":"Write","alvo":"dados/processados/codificacao.csv"}
-{"momento":"2026-…","ferramenta":"Bash","alvo":{"programa":"Rscript","caminhos":"R/validar_codificacao.R"}}
+{"momento":"2026-…", "ferramenta":"Write",
+ "alvo":"dados/processados/codificacao.csv"}
+{"momento":"2026-…", "ferramenta":"Bash",
+ "alvo":{"programa":"Rscript",
+         "caminhos":"R/validar_codificacao.R"}}
 ```
 
 - gravado por um *hook*: não depende de o agente "lembrar"
 - registra **mudanças concluídas**; dos comandos, só o programa e os arquivos — nunca dados ou senhas
 - complementar: modelo, versão, data e instrução de toda anotação feita por LLM
 
-## A camada que não se contorna {.smaller}
+## Regras em camadas {.smaller}
 
 ::: {.camada .prob}
 **Pedido** — `AGENTS.md`, prompt · *probabilístico*
@@ -336,7 +438,7 @@ A revisão por IA é julgamento. O que a torna política é a regra que a exige.
 
 . . .
 
-Os slides que vocês estão vendo passaram por esse processo. Exemplo de achado do revisor:
+Um exemplo de achado na revisão do material deste curso:
 
 > *"Quando o agente grava o arquivo pelo terminal, a validação não dispara."*
 

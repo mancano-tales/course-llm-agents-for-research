@@ -21,10 +21,10 @@ Repositório oficial de materiais, ementa, apresentações e tutoriais práticos
 ## Documentos e Materiais
 
 * **Ementa Completa**: Consulte a versão em código em [2026-workshop-agentes-dcp-usp-ementa.qmd](2026-workshop-agentes-dcp-usp-ementa.qmd), a versão compilada em PDF em [docs/2026-workshop-agentes-dcp-usp-ementa.pdf](docs/2026-workshop-agentes-dcp-usp-ementa.pdf) ou em DOCX em [docs/2026-workshop-agentes-dcp-usp-ementa.docx](docs/2026-workshop-agentes-dcp-usp-ementa.docx).
-* **Plano Geral das Aulas**: [0-meta/plan/plano-geral.md](0-meta/plan/plano-geral.md) — fio condutor, casos-âncora, cronograma, divisão de papéis e checklist de preparação.
-* **Plano de Preparação (out. 2026)**: [0-meta/plan/2026-10-06_plano-preparacao-aulas.md](0-meta/plan/2026-10-06_plano-preparacao-aulas.md) — síntese da pesquisa exploratória, decisões propostas e pauta da reunião dos ministrantes.
-* **Pesquisa Exploratória**: [0-meta/pesquisa/](0-meta/pesquisa/) — panorama de cursos sobre agentes, *code as policy*, modelos e *harnesses*, e o que Scott Cunningham tem publicado.
-* **Slides** (Quarto Reveal.js): fontes em [aulas/01-introducao-ecossistema/slides.qmd](aulas/01-introducao-ecossistema/slides.qmd) e [aulas/02-habilidades-praticas/slides.qmd](aulas/02-habilidades-praticas/slides.qmd); versões compiladas em `docs/aulas/`.
+* **Plano Geral das Aulas**: [docs/plan/plano-geral.md](docs/plan/plano-geral.md) — fio condutor, casos-âncora, cronograma, divisão de papéis e checklist de preparação.
+* **Plano de Preparação (out. 2026)**: [docs/plan/2026-10-06_plano-preparacao-aulas.md](docs/plan/2026-10-06_plano-preparacao-aulas.md) — síntese da pesquisa exploratória, decisões propostas e pauta da reunião dos ministrantes.
+* **Pesquisa Exploratória**: [docs/pesquisa/](docs/pesquisa/) — panorama de cursos sobre agentes, *code as policy*, modelos e *harnesses*, e o que Scott Cunningham tem publicado.
+* **Slides** (Quarto Beamer Madrid): apresentação única das duas sessões em [aulas/slides.qmd](aulas/slides.qmd), com versão em [PDF](docs/aulas/slides.pdf). Os marcadores “Sessão 1” e “Sessão 2” delimitam as aulas dentro do mesmo material. As versões anteriores separadas permanecem nas pastas de cada sessão; edite o arquivo único para atualizar a apresentação do curso.
 * **Roteiros do Instrutor**:
   * [Sessão 1: Introdução aos Agentes](aulas/01-introducao-ecossistema/notas-aula.md)
   * [Sessão 2: Habilidades Práticas e Governança](aulas/02-habilidades-praticas/notas-aula.md)
@@ -43,9 +43,13 @@ quarto render 2026-workshop-agentes-dcp-usp-ementa.qmd
 ```
 
 ```bash
-# Renderiza os slides de cada sessão para docs/aulas/
-quarto render aulas/01-introducao-ecossistema/slides.qmd
-quarto render aulas/02-habilidades-praticas/slides.qmd
+# Renderiza a apresentação única para PDF Beamer Madrid
+quarto render aulas/slides.qmd --to beamer
+```
+
+```powershell
+# Gera PDF Beamer Madrid (PowerShell 7, Quarto e XeLaTeX)
+pwsh -File tools/render-slides.ps1
 ```
 
 O nome dos arquivos de saída (`docs/2026-workshop-agentes-dcp-usp-ementa.{pdf,docx}`) segue automaticamente o nome do arquivo fonte — não é preciso passar `--to` ou `--output`.
