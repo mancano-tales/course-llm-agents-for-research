@@ -1,0 +1,21 @@
+---
+title: "Sobre"
+---
+
+## Ministrantes
+
+- **Manoel Galdino** ([@mgaldino](https://github.com/mgaldino)): professor no Departamento de Ciência Política da USP.
+- **Felipe Lamarca** ([@felipelmc](https://github.com/felipelmc)): mestrando em Ciência Política no IESP-UERJ.
+- **Tales Mançano** ([@mancano-tales](https://github.com/mancano-tales)): mestrando em Ciência Política no DCP-USP.
+
+## Licença
+
+O conteúdo (textos e slides) está sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pt-br); o código, sob licença MIT. Veja [LICENSE.md](https://github.com/mancano-tales/course-llm-agents-for-research/blob/main/LICENSE.md).
+
+## Como citar
+
+> Galdino, M.; Lamarca, F.; Mançano, T. *Agentes de IA para Pesquisa*. Minicurso, Seminário Discente DCP-USP, 2026. Disponível em: <https://mancano-tales.github.io/course-llm-agents-for-research/>.
+
+## Código-fonte
+
+<https://github.com/mancano-tales/course-llm-agents-for-research>

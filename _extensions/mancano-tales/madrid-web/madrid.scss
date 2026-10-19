@@ -1,0 +1,166 @@
+/*-- scss:defaults --*/
+// Versão web do Beamer Madrid: mesma paleta, barra de título e rodapé em três blocos.
+$madrid: #333399;      // structure
+$madrid-escuro: #191959;
+$madrid-medio: #262673;
+$madrid-claro: #e6e6f2;
+$tinta: #1a1a1a;
+$tinta-suave: #5a5a6e;
+$alerta: #c00000;      // alerted text
+$linha: #d0d0e0;
+
+$body-bg: #ffffff;
+$body-color: $tinta;
+$link-color: $madrid;
+$presentation-heading-color: $madrid;
+$presentation-heading-font-weight: 700;
+$presentation-font-size-root: 32px;
+$presentation-h2-font-size: 1.15em;
+$font-family-sans-serif: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$presentation-heading-font: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font-family-monospace: Consolas, "JetBrains Mono", monospace;
+$code-color: $madrid;
+$presentation-line-height: 1.3;
+
+/*-- scss:rules --*/
+
+// Barra de título do frame, de ponta a ponta.
+.reveal .slides section > h2 {
+  background: $madrid;
+  color: #fff;
+  margin: 0 -48px 0.55em;
+  padding: 0.35em 48px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.reveal .slides section > h2 code { color: #fff; background: transparent; }
+
+// Página de seção: caixa arredondada com sombra, como o section page do Madrid.
+.reveal .slides section.quarto-title-block h1,
+.reveal .slides section > h1 {
+  display: inline-block;
+  max-width: 90%;
+  background: $madrid;
+  color: #fff;
+  font-size: 1.5em;
+  padding: 0.6em 1.2em;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.18);
+}
+
+.reveal .slides section > h1 code { color: #fff; background: transparent; }
+
+.reveal .slides section:not(.quarto-title-block):has(> h1:first-child) {
+  text-align: center;
+  padding-top: 250px !important;
+}
+
+// Capa: título em bloco azul, autores e instituição abaixo.
+.reveal .slides section.quarto-title-block { text-align: center; }
+.reveal .slides section.quarto-title-block .title {
+  background: $madrid;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.18);
+  font-size: 1.6em;
+}
+.reveal .slides section.quarto-title-block .subtitle { color: $madrid-medio; font-size: 0.95em; margin-top: 0.6em; }
+.reveal .slides section.quarto-title-block .quarto-title-authors { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 1.4em; font-size: 0.75em; }
+.reveal .slides section.quarto-title-block .quarto-title-author { width: auto !important; white-space: nowrap; }
+.reveal .slides section.quarto-title-block .quarto-title-affiliation,
+.reveal .slides section.quarto-title-block .institute { font-size: 0.65em; color: $tinta-suave; }
+
+// Listas com marcadores triangulares, como o Beamer.
+.reveal ul { list-style: none; }
+.reveal ul > li { position: relative; }
+.reveal ul > li::before {
+  content: "\25B6";
+  color: $madrid;
+  font-size: 0.55em;
+  position: absolute;
+  left: -1.4em;
+  top: 0.45em;
+}
+.reveal ul ul > li::before { content: "\2013"; font-size: 0.9em; top: 0; }
+
+// Rodapé em três blocos (DCP-USP 2026 | título | número).
+.reveal .footer {
+  bottom: 0 !important;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-size: 15px;
+  line-height: 26px;
+  height: 26px;
+  color: #fff;
+  background: linear-gradient(to right, $madrid-escuro 0 32%, $madrid-medio 32% 88%, $madrid 88% 100%);
+  text-align: center;
+  padding: 0;
+}
+.reveal .footer::before {
+  content: "DCP-USP 2026";
+  position: absolute;
+  left: 1em;
+}
+.reveal .footer p { margin: 0; color: #fff; }
+.reveal .slide-number {
+  top: auto !important;
+  bottom: 0 !important;
+  height: 26px;
+  padding: 0 !important;
+  right: 1em !important;
+  font-size: 15px !important;
+  line-height: 26px;
+  background: transparent !important;
+  color: #fff !important;
+  z-index: 31;
+}
+.reveal .slide-number a { color: #fff; }
+
+// Destaques (equivalentes ao madrid.lua).
+.reveal .tese {
+  color: $madrid;
+  font-weight: 700;
+  font-size: 1.1em;
+  line-height: 1.25;
+  margin: 0.5em 0;
+}
+.reveal .alerta { color: $alerta; }
+.reveal .fonte {
+  font-size: 0.55em;
+  color: $tinta-suave;
+  margin-top: 0.6em;
+}
+
+.reveal .pequeno { font-size: 0.75em; }
+
+.reveal table { font-size: 0.8em; }
+.reveal table th { background: $madrid; color: #fff; border-bottom: none; }
+.reveal table td { border-bottom: 1px solid $linha; vertical-align: top; }
+
+// Blocos lado a lado (block / alertblock).
+.reveal .caixa {
+  background: $madrid-claro;
+  border-top: 0.35em solid $madrid;
+  border-radius: 6px;
+  padding: 0.45em 0.7em;
+}
+.reveal .caixa.prosa { border-top-color: $alerta; background: #f7e6e6; }
+
+.reveal .camada {
+  background: $madrid-claro;
+  padding: 0.2em 0.6em;
+  margin: 0.16em 0;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+.reveal .camada.prob { border-left: 6px solid $alerta; }
+.reveal .camada.det { border-left: 6px solid $madrid; }
+
+.reveal pre { font-size: 0.6em; }
+.reveal pre code { max-height: 420px; }
+
+.reveal .progress { display: none; }

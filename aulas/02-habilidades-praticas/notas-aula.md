@@ -1,6 +1,6 @@
 # Sessão 2: Habilidades Práticas, Hooks e Governança
 
-Roteiro do instrutor para a segunda sessão (1h30), com demonstrações ao vivo conduzidas pelos ministrantes. Alinhado a [2026-workshop-agentes-dcp-usp-ementa.qmd](../../2026-workshop-agentes-dcp-usp-ementa.qmd), Seção 4, Sessão 2 (os blocos 1 a 5 correspondem aos itens 1 a 5 da ementa). Os participantes **não** precisam instalar nada nem saber Git: eles assistem, perguntam e sugerem pedidos ao agente.
+Roteiro do instrutor para a segunda sessão (1h30), com demonstrações ao vivo conduzidas pelos ministrantes. Alinhado a [ementa.qmd](../../ementa.qmd), Seção 4, Sessão 2 (os blocos 1 a 5 correspondem aos itens 1 a 5 da ementa). Os participantes **não** precisam instalar nada nem saber Git: eles assistem, perguntam e sugerem pedidos ao agente.
 
 Todas as demonstrações usam o [projeto de demonstração](lab/projeto-demo/) (caso-âncora A, discursos parlamentares fictícios). Passo a passo técnico e plano de *backup*: [lab/projeto-demo/README.md](lab/projeto-demo/README.md). Visão de conjunto: [docs/plan/plano-geral.md](../../docs/plan/plano-geral.md). Referências: [referencias.md](../../referencias.md).
 

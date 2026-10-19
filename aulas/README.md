@@ -1,6 +1,8 @@
 # Apresentação única do minicurso
 
-A fonte principal é `slides.qmd`, com as duas sessões e um bloco de aprofundamento. O PDF usa o template nativo **Beamer Madrid**, em 16:9. `madrid-header.tex` configura identificação e numeração; `madrid.lua` diferencia referências e destaques.
+A fonte única é `agentes-ia-pesquisa.qmd`, com as duas sessões e um bloco de aprofundamento. Ela gera duas saídas com o tema `madrid-web` (extensão em `_extensions/`, mantida no repositório `presentations`): slides web (`madrid-web-revealjs`), publicados no site, e PDF Beamer Madrid 16:9 (`madrid-web-beamer`). `madrid-header.tex` configura o rodapé do PDF. Não use LaTeX solto no corpo: destaques vão em classes (`.tese`, `.alerta`, `.fonte`), tratadas nos dois formatos.
+
+Atualizar o tema: `quarto add mancano-tales/presentations --no-prompt`.
 
 Na raiz do repositório, execute:
 
@@ -8,7 +10,7 @@ Na raiz do repositório, execute:
 pwsh -File tools/render-slides.ps1
 ```
 
-Requer PowerShell 7, Quarto e LaTeX com XeLaTeX (por exemplo, TinyTeX). As fontes usadas são Arial e Consolas. O script compila o PDF com Beamer. A saída é `docs/aulas/slides.pdf`.
+Requer PowerShell 7, Quarto e LaTeX com XeLaTeX (por exemplo, TinyTeX). As fontes usadas são Arial e Consolas. O script compila o PDF com Beamer. A saída é copiada para `assets/agentes-ia-pesquisa.pdf`, publicada no site.
 
 O modo `handout` consolida os incrementos no PDF, mantendo uma página por frame. O PDF não depende de impressão do navegador.
 

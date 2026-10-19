@@ -1,7 +1,43 @@
-﻿project:
-  type: default
-  output-dir: docs
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - ementa.qmd
+    - aulas/index.qmd
+    - aulas/agentes-ia-pesquisa.qmd
+    - materiais.qmd
+    - sobre.qmd
+  resources:
+    - assets/
+    - referencias.bib
+
+lang: pt
+
+website:
+  title: "Agentes de IA para Pesquisa"
+  site-url: https://mancano-tales.github.io/course-llm-agents-for-research/
+  repo-url: https://github.com/mancano-tales/course-llm-agents-for-research
+  page-navigation: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Início
+      - href: ementa.qmd
+        text: Ementa
+      - href: aulas/index.qmd
+        text: Aulas
+      - href: materiais.qmd
+        text: Materiais
+      - href: sobre.qmd
+        text: Sobre
+    right:
+      - icon: github
+        href: https://github.com/mancano-tales/course-llm-agents-for-research
+  page-footer:
+    center: "Seminário Discente DCP-USP 2026 · Conteúdo sob CC BY 4.0"
 
 format:
-  typst: default
-  docx: default
+  html:
+    theme: cosmo
+    toc: true
