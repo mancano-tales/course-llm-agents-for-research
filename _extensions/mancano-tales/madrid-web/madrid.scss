@@ -37,7 +37,7 @@ $presentation-line-height: 1.3;
 .reveal .slides section > h2 code { color: #fff; background: transparent; }
 
 // Página de seção: caixa arredondada com sombra, como o section page do Madrid.
-.reveal .slides section.title-slide h1,
+.reveal .slides section.quarto-title-block h1,
 .reveal .slides section > h1 {
   display: inline-block;
   max-width: 90%;
@@ -51,14 +51,14 @@ $presentation-line-height: 1.3;
 
 .reveal .slides section > h1 code { color: #fff; background: transparent; }
 
-.reveal .slides section:has(> h1:first-child) {
+.reveal .slides section:not(.quarto-title-block):has(> h1:first-child) {
   text-align: center;
   padding-top: 250px !important;
 }
 
 // Capa: título em bloco azul, autores e instituição abaixo.
-.reveal .slides section.title-slide { text-align: center; }
-.reveal .slides section.title-slide .title {
+.reveal .slides section.quarto-title-block { text-align: center; }
+.reveal .slides section.quarto-title-block .title {
   background: $madrid;
   color: #fff;
   border-radius: 10px;
@@ -66,10 +66,11 @@ $presentation-line-height: 1.3;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.18);
   font-size: 1.6em;
 }
-.reveal .slides section.title-slide .subtitle { color: $madrid-medio; font-size: 0.95em; margin-top: 0.6em; }
-.reveal .slides section.title-slide .quarto-title-authors { justify-content: center; font-size: 0.75em; }
-.reveal .slides section.title-slide .quarto-title-affiliation,
-.reveal .slides section.title-slide .institute { font-size: 0.65em; color: $tinta-suave; }
+.reveal .slides section.quarto-title-block .subtitle { color: $madrid-medio; font-size: 0.95em; margin-top: 0.6em; }
+.reveal .slides section.quarto-title-block .quarto-title-authors { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 1.4em; font-size: 0.75em; }
+.reveal .slides section.quarto-title-block .quarto-title-author { width: auto !important; white-space: nowrap; }
+.reveal .slides section.quarto-title-block .quarto-title-affiliation,
+.reveal .slides section.quarto-title-block .institute { font-size: 0.65em; color: $tinta-suave; }
 
 // Listas com marcadores triangulares, como o Beamer.
 .reveal ul { list-style: none; }
