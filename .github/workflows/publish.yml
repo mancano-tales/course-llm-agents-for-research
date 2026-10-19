@@ -21,8 +21,8 @@ jobs:
       - name: Renderizar site e ementa (PDF/DOCX)
         run: |
           quarto render
-          quarto render 2026-workshop-agentes-dcp-usp-ementa.qmd --to typst
-          quarto render 2026-workshop-agentes-dcp-usp-ementa.qmd --to docx
+          quarto render ementa.qmd --to typst
+          quarto render ementa.qmd --to docx
       - uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages

@@ -10,12 +10,12 @@ title: "Sobre"
 
 ## Licença
 
-O conteúdo (textos e slides) está sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pt-br); o código, sob licença MIT. Veja [LICENSE.md](https://github.com/mancano-tales/agentic-research-workshop/blob/main/LICENSE.md).
+O conteúdo (textos e slides) está sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pt-br); o código, sob licença MIT. Veja [LICENSE.md](https://github.com/mancano-tales/course-llm-agents-for-research/blob/main/LICENSE.md).
 
 ## Como citar
 
-> Galdino, M.; Lamarca, F.; Mançano, T. *Agentes de IA para Pesquisa*. Minicurso, Seminário Discente DCP-USP, 2026. Disponível em: <https://mancano-tales.github.io/agentic-research-workshop/>.
+> Galdino, M.; Lamarca, F.; Mançano, T. *Agentes de IA para Pesquisa*. Minicurso, Seminário Discente DCP-USP, 2026. Disponível em: <https://mancano-tales.github.io/course-llm-agents-for-research/>.
 
 ## Código-fonte
 
-<https://github.com/mancano-tales/agentic-research-workshop>
+<https://github.com/mancano-tales/course-llm-agents-for-research>

@@ -1,8 +1,10 @@
-# Workshop Agentes: Inteligência Artificial e Autonomia na Pesquisa Social
+# LLM Agents for Research — Agentes de IA para Pesquisa
 
-**Site:** <https://mancano-tales.github.io/agentic-research-workshop/> (slides, ementa e materiais).
+Minicurso *Workshop Agentes: Inteligência Artificial e Autonomia na Pesquisa Social* (Seminário Discente DCP-USP 2026).
 
-Repositório oficial de materiais, ementa, apresentações e tutoriais práticos do minicurso oferecido no **Seminário Discente DCP-USP 2026**.
+**Site:** <https://mancano-tales.github.io/course-llm-agents-for-research/> (slides, ementa e materiais).
+
+Materiais, ementa, slides e laboratório do minicurso. Material de terceiros recebido em confiança não fica aqui.
 
 ## Ministrantes
 * **Manoel Galdino** ([@mgaldino](https://github.com/mgaldino)) — Professor no Departamento de Ciência Política da USP
@@ -22,11 +24,11 @@ Repositório oficial de materiais, ementa, apresentações e tutoriais práticos
 
 ## Documentos e Materiais
 
-* **Ementa Completa**: Consulte a versão em código em [2026-workshop-agentes-dcp-usp-ementa.qmd](2026-workshop-agentes-dcp-usp-ementa.qmd), a versão compilada (HTML, PDF e DOCX) no site.
+* **Ementa Completa**: Consulte a versão em código em [ementa.qmd](ementa.qmd), a versão compilada (HTML, PDF e DOCX) no site.
 * **Plano Geral das Aulas**: [docs/plan/plano-geral.md](docs/plan/plano-geral.md) — fio condutor, casos-âncora, cronograma, divisão de papéis e checklist de preparação.
 * **Plano de Preparação (out. 2026)**: [docs/plan/2026-10-06_plano-preparacao-aulas.md](docs/plan/2026-10-06_plano-preparacao-aulas.md) — síntese da pesquisa exploratória, decisões propostas e pauta da reunião dos ministrantes.
 * **Pesquisa Exploratória**: [docs/pesquisa/](docs/pesquisa/) — panorama de cursos sobre agentes, *code as policy*, modelos e *harnesses*, e o que Scott Cunningham tem publicado.
-* **Slides** (Quarto Beamer Madrid): apresentação única das duas sessões em [aulas/slides.qmd](aulas/slides.qmd), com versão em [PDF](assets/agentes-ia-pesquisa.pdf). Os marcadores “Sessão 1” e “Sessão 2” delimitam as aulas dentro do mesmo material. As versões anteriores separadas permanecem nas pastas de cada sessão; edite o arquivo único para atualizar a apresentação do curso.
+* **Slides**: fonte única das duas sessões em [aulas/agentes-ia-pesquisa.qmd](aulas/agentes-ia-pesquisa.qmd). Gera os slides web do site e o [PDF Beamer](assets/agentes-ia-pesquisa.pdf), com o tema [madrid-web](https://github.com/mancano-tales/presentations/tree/main/_extensions/madrid-web) (`_extensions/`).
 * **Roteiros do Instrutor**:
   * [Sessão 1: Introdução aos Agentes](aulas/01-introducao-ecossistema/notas-aula.md)
   * [Sessão 2: Habilidades Práticas e Governança](aulas/02-habilidades-praticas/notas-aula.md)
@@ -47,8 +49,8 @@ quarto preview
 
 ```bash
 # Ementa em PDF (Typst) e DOCX, dentro de _site/
-quarto render 2026-workshop-agentes-dcp-usp-ementa.qmd --to typst
-quarto render 2026-workshop-agentes-dcp-usp-ementa.qmd --to docx
+quarto render ementa.qmd --to typst
+quarto render ementa.qmd --to docx
 ```
 
 ```powershell

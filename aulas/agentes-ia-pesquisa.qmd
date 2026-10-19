@@ -8,18 +8,16 @@ author:
 institute: "Seminário Discente DCP-USP 2026"
 lang: pt
 format:
-  beamer:
-    theme: Madrid
-    slide-level: 2
-    aspectratio: 169
+  madrid-web-revealjs:
+    footer: "Agentes de IA para Pesquisa"
+    toc: false
+  madrid-web-beamer:
     classoption: handout
-    pdf-engine: xelatex
     mainfont: Arial
     sansfont: Arial
     monofont: Consolas
     fontsize: 11pt
     keep-tex: false
-    filters: [madrid.lua]
     include-in-header: madrid-header.tex
 ---
 
